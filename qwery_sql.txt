@@ -1,0 +1,19 @@
+Создание таблицы -
+
+CREATE TABLE books (
+    book_id INT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    publication_year INT,
+    genre VARCHAR(50)
+);
+
+Добавление колонок -
+
+ALTER TABLE books
+ADD COLUMN isbn VARCHAR(13);
+
+Заполнение колонок - 
+
+INSERT INTO books (book_id, title, author, publication_year, genre)
+VALUES (1, '1984', 'George Orwell', 1949, 'Dystopia');

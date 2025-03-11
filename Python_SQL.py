@@ -1,5 +1,8 @@
 import pg8000
 
+with open("inputSQL.sql", "r") as file:
+    qwery = file.read()
+
 connection = None
 
 try:
@@ -14,14 +17,14 @@ try:
     cursor = connection.cursor()
 
     # Выполнение запроса
-    cursor.execute("SELECT * FROM public.book")
+    cursor.execute(qwery)
     db_version = cursor.fetchone()
     print(db_version)
 
     i = int(input("Записать в файл? 0 - Да / 1 - Нет    "))
 
     if i == 0:
-        with open("SQLqwery.txt", "w") as file:
+        with open("outputSQL.txt", "w") as file:
             file.write(f"{db_version}")
 
 except Exception as error:
