@@ -14,12 +14,15 @@ try:
     cursor = connection.cursor()
 
     # Выполнение запроса
-    cursor.execute("CREATE TABLE public.book (BookID INT PRIMARY KEY,Title VARCHAR(100),Author VARCHAR(100),YearPublished INT);")
+    cursor.execute("SELECT * FROM public.book")
     db_version = cursor.fetchone()
     print(db_version)
 
-    with open("z1.SQL.xml", "w") as file:
-        file.write(f"{db_version}")
+    i = int(input("Записать в файл? 0 - Да / 1 - Нет    "))
+
+    if i == 0:
+        with open("SQLqwery.txt", "w") as file:
+            file.write(f"{db_version}")
 
 except Exception as error:
     print(f"Error: {error}")
