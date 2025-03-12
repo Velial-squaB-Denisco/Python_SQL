@@ -24,8 +24,8 @@ try:
     i = int(input("Записать в файл? 0 - Да / 1 - Нет    "))
 
     if i == 0:
-        with open("outputSQL.xlsx", "w") as file:
-            file.write(f"{db_version}")
+        df = pd.DataFrame(db_version, columns=column_names)
+        df.to_excel("outputSQL.xlsx", index=False)
 
 except Exception as error:
     print(f"Error: {error}")
