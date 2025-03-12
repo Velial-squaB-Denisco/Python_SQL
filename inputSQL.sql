@@ -1,5 +1,6 @@
 create table Codewars(
     id INT PRIMARY KEY,
-    title_puzzle VARCHAR[100],
-    
-) 
+    name_puzzle VARCHAR[100],
+    point_puzzle INT
+    status_puzzle VARCHAR[5]
+);
