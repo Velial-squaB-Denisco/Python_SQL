@@ -21,3 +21,9 @@ VALUES (1, '1984', 'George Orwell', 1949, 'Dystopia');
 Удаление таблицы -
 
 DROP TABLE имя_таблицы;
+
+
+Изменение типа данных таблицы
+
+ALTER TABLE имя_таблицы
+ALTER COLUMN имя_столбца TYPE новый_тип;
