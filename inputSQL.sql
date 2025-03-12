@@ -1,6 +1,6 @@
-create table Codewars(
+create table postgres.public.Codewars(
     id INT PRIMARY KEY,
     name_puzzle VARCHAR[100],
-    point_puzzle INT
+    point_puzzle INT,
     status_puzzle VARCHAR[5]
 );
