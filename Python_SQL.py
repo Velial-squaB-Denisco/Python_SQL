@@ -1,4 +1,5 @@
 import pg8000
+import pandas as pd
 
 with open("inputSQL.sql", "r") as file:
     qwery = file.read()
