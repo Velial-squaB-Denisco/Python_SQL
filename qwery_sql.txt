@@ -36,3 +36,10 @@ SET порядковый_столбец = CASE
     WHEN порядковый_столбец = 3 THEN 2
 END
 WHERE порядковый_столбец IN (2, 3);
+
+Сортировка
+
+ALTER TABLE таблица 
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (order_column);
+
