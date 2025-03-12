@@ -20,13 +20,9 @@ try:
 
     # Выполнение запроса
     cursor.execute(qwery)
-
-    # Извлечение данных
-    db_version = cursor.fetchall()  # Получаем все данные после выполнения запроса
-
-    # Получение названий колонок
-    column_names = [desc[0] for desc in cursor.description]
-
+    db_version = cursor.fetchall()  # Извлечение данных
+    column_names = [desc[0] for desc in cursor.description] # Получение названий колонок
+    
     # Проверяем, нужно ли записывать в файл
     i = int(input("Записать в файл? 0 - Да / 1 - Нет: "))
 
