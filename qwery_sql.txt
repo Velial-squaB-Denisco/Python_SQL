@@ -27,3 +27,12 @@ DROP TABLE имя_таблицы;
 
 ALTER TABLE имя_таблицы
 ALTER COLUMN имя_столбца TYPE новый_тип;
+
+Swap 
+
+UPDATE таблица
+SET порядковый_столбец = CASE
+    WHEN порядковый_столбец = 2 THEN 3
+    WHEN порядковый_столбец = 3 THEN 2
+END
+WHERE порядковый_столбец IN (2, 3);
