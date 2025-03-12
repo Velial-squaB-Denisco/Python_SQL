@@ -17,3 +17,7 @@ ADD COLUMN isbn VARCHAR(13);
 
 INSERT INTO books (book_id, title, author, publication_year, genre)
 VALUES (1, '1984', 'George Orwell', 1949, 'Dystopia');
+
+Удаление таблицы -
+
+DROP TABLE имя_таблицы;

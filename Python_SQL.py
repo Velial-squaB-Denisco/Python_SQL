@@ -24,7 +24,7 @@ try:
     i = int(input("Записать в файл? 0 - Да / 1 - Нет    "))
 
     if i == 0:
-        with open("outputSQL.txt", "w") as file:
+        with open("outputSQL.xlsx", "w") as file:
             file.write(f"{db_version}")
 
 except Exception as error:
