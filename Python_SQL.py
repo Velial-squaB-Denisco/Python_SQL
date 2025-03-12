@@ -1,6 +1,7 @@
 import pg8000
 import pandas as pd
 
+# Чтение SQL запроса из файла
 with open("inputSQL.sql", "r") as file:
     qwery = file.read()
 
@@ -13,18 +14,20 @@ try:
         user="postgres",
         password="password",
         host="localhost",
-        port="5432"
+        port=5432
     )
     cursor = connection.cursor()
-    
+
     # Выполнение запроса
     cursor.execute(qwery)
-    db_version = cursor.fetchone()
-    print(db_version)
-
-    i = int(input("Записать в файл? 0 - Да / 1 - Нет    "))
+    db_version = cursor.fetchall()  # Извлечение данных
+    column_names = [desc[0] for desc in cursor.description] # Получение названий колонок
+    
+    # Проверяем, нужно ли записывать в файл
+    i = int(input("Записать в файл? 0 - Да / 1 - Нет: "))
 
     if i == 0:
+        # Конвертация данных в DataFrame и запись в Excel
         df = pd.DataFrame(db_version, columns=column_names)
         df.to_excel("outputSQL.xlsx", index=False)
 
