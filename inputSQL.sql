@@ -1,4 +1,4 @@
-create table postgres.public.Codewars(
+create table Codewars(
     id INT PRIMARY KEY,
     name_puzzle VARCHAR[100],
     point_puzzle INT,
